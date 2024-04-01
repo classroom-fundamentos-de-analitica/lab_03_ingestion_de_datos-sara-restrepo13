@@ -42,7 +42,7 @@ def ingest_data():
             palabras_clave = ' '.join(palabras).strip()
         
             # Eliminar cualquier signo de puntuación no deseado al final de la cadena
-            palabras_clave = palabras_clave.rstrip('.').rstrip(',')
+            palabras_clave = palabras_clave.rstrip('.')
             guardar_cluster['principales_palabras_clave'] = palabras_clave
 
 
@@ -52,7 +52,7 @@ def ingest_data():
             palabras_clave = ' '.join(palabras).strip()
             
             # Eliminar cualquier signo de puntuación no deseado al final de la cadena
-            palabras_clave = palabras_clave.rstrip('.').rstrip(',')
+            palabras_clave = palabras_clave.rstrip('.')
             
             guardar_cluster['principales_palabras_clave'] += ' ' + palabras_clave
 
