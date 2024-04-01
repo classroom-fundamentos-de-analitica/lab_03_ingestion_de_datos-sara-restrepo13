@@ -39,12 +39,12 @@ def ingest_data():
                 guardar_cluster['porcentaje_de_palabras_clave'] = float(porcentaje.replace(',', '.'))
                 if palabras[0].startswith('%'):
                     palabras[0] = palabras[0][1:]  # Eliminar el primer carácter (%)
-                guardar_cluster['principales_palabras_clave'] = ' '.join(palabras)
+                guardar_cluster['principales_palabras_clave'] = ' '.join(palabras).strip()
             
             elif re.match('^ +[a-z]', line):
                 # Si la línea comienza con letras, es una continuación del cluster actual
                 words = line.split()
-                guardar_cluster['principales_palabras_clave'] += ' '+' '.join(words)
+                guardar_cluster['principales_palabras_clave'] += ' '+' '.join(words).strip()
 
 
     # Agregamos el último cluster después del bucle
